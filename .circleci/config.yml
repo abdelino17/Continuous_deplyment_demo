@@ -47,6 +47,7 @@ jobs:
             export DEFAULT_PRIVATE_KEY_FILE=~/.ssh/id_rsa_0a3ec9a85224fe93550fd6fe284a4cb2
             echo $DEFAULT_PRIVATE_KEY_FILE
             cat $DEFAULT_PRIVATE_KEY_FILE
+            ssh -i  $DEFAULT_PRIVATE_KEY_FILE ubuntu@ec2-44-204-136-56.compute-1.amazonaws.com
             ansible-playbook -i inventory.txt main.yml
 
   say-hello:
