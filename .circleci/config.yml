@@ -20,7 +20,7 @@ jobs:
                 --template-file template.yml \
                 --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
                 --region us-east-1
-        - destroy_cloudformation
+        # - destroy_cloudformation
 
   # Exercise: Config and Deployment
   configure_infrastructure: 
@@ -29,7 +29,7 @@ jobs:
     steps:
       - checkout
       - add_ssh_keys:
-          fingerprints: ["5d:98:16:83:99:bb:b3:6c:79:d0:14:99:a9:b0:d6:82"]
+          fingerprints: ["0a:3e:c9:a8:52:24:fe:93:55:0f:d6:fe:28:4a:4c:b2"]
       - run:
           name: Install dependencies
           command: |
@@ -59,5 +59,5 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      - create_infrastructure
-      # - configure_infrastructure
+      # - create_infrastructure
+      - configure_infrastructure
