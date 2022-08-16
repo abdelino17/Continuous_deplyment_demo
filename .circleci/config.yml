@@ -20,7 +20,7 @@ jobs:
                 --template-file template.yml \
                 --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} \
                 --region us-east-1
-        # - destroy_cloudformation
+        - destroy_cloudformation
 
   # Exercise: Config and Deployment
   configure_infrastructure: 
@@ -54,5 +54,6 @@ workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      - create_infrastructure
-      # - configure_infrastructure
+      #- create_infrastructure
+      #- configure_infrastructure
+      - destroy_cloudformation
