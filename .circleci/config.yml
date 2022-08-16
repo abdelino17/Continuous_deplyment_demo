@@ -44,7 +44,6 @@ jobs:
       - run:
           name: Configure server
           command: |
-            export DEFAULT_PRIVATE_KEY_FILE=~/.ssh/id_rsa_0a3ec9a85224fe93550fd6fe284a4cb2
             ansible-playbook -i inventory.txt main.yml
 
   say-hello:
