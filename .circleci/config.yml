@@ -4,7 +4,7 @@ commands:
   destroy_cloudformation:
     description: "Delete CloudForamtion"
     steps:
-      - run: aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5}
+      - run: aws cloudformation delete-stack --stack-name myStack-${CIRCLE_WORKFLOW_ID:0:5} --region us-east-1
           # when: on_fail
 
 jobs:
